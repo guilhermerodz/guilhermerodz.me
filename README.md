@@ -5,8 +5,18 @@
 </h1>
 
 <p align="left">
-  <img src="https://img.shields.io/badge/powered%20by-gatsby-%23F45d22" alt="Powered by" />
-  <img src="https://img.shields.io/twitter/follow/guilherme_rodz?label=Follow%20Guilherme%20Rodz&style=social" alt="Follow @guilhermerodz" />
+  <a href="https://www.gatsbyjs.org" target="_blank">
+    <img
+      src="https://img.shields.io/badge/powered%20by-gatsby-%23F45d22"
+      alt="Powered by"
+    />
+  </a>
+  <a href="https://twitter.com/intent/user?screen_name=guilherme_rodz" target="_blank">
+    <img
+      src="https://img.shields.io/twitter/follow/guilherme_rodz?label=Follow%20Guilherme%20Rodz&style=social"
+      alt="Follow @guilherme_rodz"
+    />
+  </a>
 </p>
 
 My personal blog and website developed with [Gatsby](https://www.gatsbyjs.org/), fast in every way that matters.
