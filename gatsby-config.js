@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `Guilherme Rodz | Software Engineer`,
@@ -13,5 +15,13 @@ module.exports = {
       youtubeUrl: `https://www.youtube.com/guilhermerodz`,
     },
   },
-  plugins: ['gatsby-plugin-styled-components'],
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        '~': path.join(__dirname, 'src'),
+      },
+    },
+    'gatsby-plugin-styled-components',
+  ],
 };
