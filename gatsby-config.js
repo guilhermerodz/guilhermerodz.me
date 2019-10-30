@@ -13,5 +13,5 @@ module.exports = {
       youtubeUrl: `https://www.youtube.com/guilhermerodz`,
     },
   },
-  plugins: [],
+  plugins: ['gatsby-plugin-styled-components'],
 };
