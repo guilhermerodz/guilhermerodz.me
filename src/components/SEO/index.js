@@ -12,6 +12,9 @@ export default function SEO({ description, lang, meta, title, image_url }) {
             title
             description
             author
+            social {
+              twitterUsername
+            }
           }
         }
       }
@@ -56,7 +59,7 @@ export default function SEO({ description, lang, meta, title, image_url }) {
         },
         {
           name: 'twitter:creator',
-          content: '@guilherme_rodz',
+          content: `@${site.siteMetadata.social.twitterUsername}`,
         },
         {
           property: 'twitter:description',

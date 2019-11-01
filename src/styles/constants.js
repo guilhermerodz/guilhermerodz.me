@@ -13,6 +13,18 @@ export const Sizes = {
   xxlg: '9.6rem',
 };
 
+export const Media = {
+  xs: 576,
+  sm: 767,
+  md: 991,
+  lg: 1199,
+};
+
+export const Widths = {
+  md: '750px',
+  lg: '1080px',
+};
+
 export const Heights = {
   headerSm: Sizes.lg,
   headerLg: Sizes.xlg,
@@ -25,6 +37,9 @@ export const Heights = {
 // --------------------------------------------------
 
 export const Color = {
+  background: '#282A36',
+  orange: '#F87737',
+  green: '#4ef579',
   primary: '#eee',
   secondary: '#eee',
   tertiary: '#eee',
