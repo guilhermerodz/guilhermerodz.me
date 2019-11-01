@@ -1,15 +1,20 @@
 import React from 'react';
 
 import Layout from '~/components/Layout';
+import SEO from '~/components/SEO';
 
 export default function PostPage({ pageContext }) {
   const { title, content } = pageContext;
 
   return (
     <Layout>
-      <h1>{title}</h1>
+      <SEO title="Home" />
 
-      <p>{content}</p>
+      <div>
+        <h1>{title}</h1>
+
+        <p>{content}</p>
+      </div>
     </Layout>
   );
 }
