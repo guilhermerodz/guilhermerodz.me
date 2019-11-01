@@ -1,11 +1,9 @@
 import React from 'react';
 
-// import { Container } from './styles';
-
-export default function Home() {
+export default function HomePage() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <h1>Welcome to my Home Page!</h1>
     </div>
   );
 }
