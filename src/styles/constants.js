@@ -40,6 +40,7 @@ export const Color = {
   background: '#282A36',
   orange: '#F87737',
   green: '#4ef579',
+  pink: '#FD78C5',
   primary: '#eee',
   secondary: '#eee',
   tertiary: '#eee',

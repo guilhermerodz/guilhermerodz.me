@@ -49,3 +49,7 @@ export const Heading = styled.h1`
     font-size: 1.3rem;
   `}
 `;
+
+export const Code = styled.span`
+  color: ${Color.pink};
+`;

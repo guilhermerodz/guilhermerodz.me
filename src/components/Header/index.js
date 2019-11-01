@@ -4,7 +4,7 @@ import useResponsive from '~/hooks/useResponsive';
 import Limiter from '~/components/Limiter';
 import Avatar from '~/components/Avatar';
 
-import { Container, Content, Brand, Heading } from './styles';
+import { Container, Content, Brand, Heading, Code } from './styles';
 
 export default function Header() {
   const { lessThanExtraSmall } = useResponsive();
@@ -16,7 +16,11 @@ export default function Header() {
           <Brand>
             <Avatar />
 
-            <Heading>{lessThanExtraSmall ? 'Rodz' : 'Guilherme Rodz'}</Heading>
+            <Heading>
+              <Code>{'<'}</Code>
+              {lessThanExtraSmall ? 'Rodz' : 'Guilherme Rodz'}
+              <Code>{'/>'}</Code>
+            </Heading>
           </Brand>
         </Content>
       </Limiter>
