@@ -28,6 +28,18 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Guilherme Rodz',
+        short_name: 'guilhermerodz.me',
+        start_url: '/',
+        background_color: '#282A36',
+        theme_color: '#171921',
+        display: 'minimal-ui',
+        icon: 'src/assets/icon.jpg',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         '~': path.join(__dirname, 'src'),
