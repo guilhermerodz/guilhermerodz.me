@@ -41,15 +41,8 @@ export const Color = {
   orange: '#F87737',
   green: '#4ef579',
   pink: '#FD78C5',
-  primary: '#eee',
-  secondary: '#eee',
-  tertiary: '#eee',
-  quaternary: '#eee',
-  quinary: '#eee',
-  senary: '#eee',
-  septenary: '#eee',
-  octonary: '#eee',
-  nonary: '#eee',
+  primary: '#F7F7F0',
+  highlight: '#44475a',
 };
 
 // --------------------------------------------------
@@ -61,4 +54,12 @@ export const StackOrder = {
   default: '1',
   footer: '5',
   header: '5',
+};
+
+// --------------------------------------------------
+// Timing
+// --------------------------------------------------
+
+export const Animation = {
+  delay: '.2s',
 };

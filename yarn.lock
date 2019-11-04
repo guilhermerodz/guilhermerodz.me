@@ -769,6 +769,13 @@
   dependencies:
     "@emotion/memoize" "0.7.3"
 
+"@emotion/is-prop-valid@^0.8.3":
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.5.tgz#2dda0791f0eafa12b7a0a5b39858405cc7bde983"
+  integrity sha512-6ZODuZSFofbxSbcxwsFz+6ioPjb0ISJRRPLZ+WIbjcU2IMU0Io+RGQjjaTgOvNQl007KICBm7zXQaYQEC1r6Bg==
+  dependencies:
+    "@emotion/memoize" "0.7.3"
+
 "@emotion/memoize@0.7.3":
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.3.tgz#5b6b1c11d6a6dddf1f2fc996f74cf3b219644d78"
@@ -11233,6 +11240,14 @@ styled-components@^4.4.0:
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
 
+styled-icons@^8.6.0:
+  version "8.6.0"
+  resolved "https://registry.yarnpkg.com/styled-icons/-/styled-icons-8.6.0.tgz#e5b7183b2ca569fe414e913adaa9f67f6e45142b"
+  integrity sha512-qxHyIIVzy9AKAlKSoH3FjfugwIwdOO/gzMZwJTy/ltE+jQQeF+rvJ1RG6rDrK0ZTp+2sY/S6tvnMiR7LIVFBjA==
+  dependencies:
+    "@emotion/is-prop-valid" "^0.8.3"
+    tslib "^1.9.3"
+
 styled-media-query@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/styled-media-query/-/styled-media-query-2.1.2.tgz#d59e8d91bc4bcff210dc511bdcecedf16eb2c5b7"
@@ -11569,7 +11584,7 @@ ts-pnp@^1.1.2:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.1.4.tgz#ae27126960ebaefb874c6d7fa4729729ab200d90"
   integrity sha512-1J/vefLC+BWSo+qe8OnJQfWTYRS6ingxjwqmHMqaMxXMj7kFtKLgAaYW3JeX3mktjgUL+etlU8/B4VUAUI9QGw==
 
-tslib@^1.6.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.6.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==

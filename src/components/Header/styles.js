@@ -12,6 +12,7 @@ export const Container = styled.div`
   width: 100%;
 
   background-color: #171921;
+  border-bottom: 1px solid #343847;
 `;
 
 export const Content = styled.div`
