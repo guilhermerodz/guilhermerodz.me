@@ -4,28 +4,28 @@ import { Media } from '~/styles/constants';
 
 export default function useResponsive() {
   const lessThanExtraSmall = useMediaQuery({
-    query: `(max-device-width: ${Media.xs}px)`,
+    query: `(max-width: ${Media.xs}px)`,
   });
   const greaterThanExtraSmall = useMediaQuery({
-    query: `(min-device-width: ${Media.xs + 1}px)`,
+    query: `(min-width: ${Media.xs + 1}px)`,
   });
   const lessThanSmall = useMediaQuery({
-    query: `(max-device-width: ${Media.sm}px)`,
+    query: `(max-width: ${Media.sm}px)`,
   });
   const greaterThanSmall = useMediaQuery({
-    query: `(min-device-width: ${Media.sm + 1}px)`,
+    query: `(min-width: ${Media.sm + 1}px)`,
   });
   const lessThanMedium = useMediaQuery({
-    query: `(max-device-width: ${Media.md}px)`,
+    query: `(max-width: ${Media.md}px)`,
   });
   const greaterThanMedium = useMediaQuery({
-    query: `(min-device-width: ${Media.md + 1}px)`,
+    query: `(min-width: ${Media.md + 1}px)`,
   });
   const lessThanLarge = useMediaQuery({
-    query: `(max-device-width: ${Media.lg}px)`,
+    query: `(max-width: ${Media.lg}px)`,
   });
   const greaterThanLarge = useMediaQuery({
-    query: `(min-device-width: ${Media.lg + 1}px)`,
+    query: `(min-width: ${Media.lg + 1}px)`,
   });
 
   return {
