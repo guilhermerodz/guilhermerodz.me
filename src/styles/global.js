@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { Color } from './constants';
+
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Fira+Code:400&display=swap');
@@ -17,6 +19,9 @@ const GlobalStyles = createGlobalStyle`
   }
   blockquote, q {
     quotes: none;
+  }
+  ::selection {
+    background: ${Color.highlight};
   }
 `;
 export default GlobalStyles;

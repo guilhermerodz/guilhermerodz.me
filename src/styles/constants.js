@@ -42,7 +42,7 @@ export const Color = {
   green: '#4ef579',
   pink: '#FD78C5',
   primary: '#F7F7F0',
-  highlight: '#44475a',
+  highlight: 'rgba(68, 71, 90, 0.996)',
 };
 
 // --------------------------------------------------
