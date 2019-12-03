@@ -2,13 +2,17 @@ import React from 'react';
 
 import Layout from '~/components/Layout';
 import SEO from '~/components/SEO';
+import Grid from '~/components/Grid';
+import PostList from '~/components/PostList';
 
 export default function HomePage() {
   return (
     <Layout>
       <SEO title="Home" />
 
-      <h1>Welcome to my Home Page!</h1>
+      <Grid>
+        <PostList />
+      </Grid>
     </Layout>
   );
 }

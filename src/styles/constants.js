@@ -38,10 +38,12 @@ export const Heights = {
 
 export const Color = {
   background: '#282A36',
+  yellow: '#e6ee86',
   orange: '#F87737',
   green: '#4ef579',
   pink: '#FD78C5',
   primary: '#F7F7F0',
+  secondary: '#ededde',
   highlight: 'rgba(68, 71, 90, 0.996)',
 };
 

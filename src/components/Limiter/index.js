@@ -1,7 +1,14 @@
-import React from 'react';
+import styled from 'styled-components';
+import media from 'styled-media-query';
 
-import { Container } from './styles';
+import { Widths, Sizes } from '~/styles/constants';
 
-export default function Limiter({ children, ...rest }) {
-  return <Container {...rest}>{children}</Container>;
-}
+export default styled.div`
+  margin: 0 auto;
+  max-width: ${Widths.lg};
+  padding: 0 ${Sizes.sm};
+
+  ${media.greaterThan('medium')`
+    padding: 0 ${Sizes.default};
+  `}
+`;

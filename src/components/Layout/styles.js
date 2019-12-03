@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
-import { Color, Heights, Media, Sizes } from '~/styles/constants';
+import { Color, Heights, Media, Widths } from '~/styles/constants';
 
 export const Page = styled.section`
   display: block;
@@ -23,5 +23,5 @@ export const Body = styled.main`
 
 export const Container = styled.div`
   margin: 0 auto;
-  max-width: ${Sizes.lg};
+  max-width: ${Widths.lg};
 `;
