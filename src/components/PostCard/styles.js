@@ -36,8 +36,6 @@ export const Title = styled.h1`
 export const Description = styled.h2`
   ${Subtitle.secondary}
 
-  line-clamp: 1;
-
   &:not(:last-child) {
     margin-bottom: ${Sizes.default};
   }
@@ -103,26 +101,24 @@ export const PlayIcon = styled(PlayCircle)`
 `;
 
 export const TagsWrapper = styled.div`
-  padding: ${Sizes.sm} ${Sizes.md} ${Sizes.default};
+  padding: ${Sizes.sm} ${Sizes.md} calc(${Sizes.default} - 0.5rem);
 `;
 
 export const Tags = styled.div`
   display: flex;
 
+  padding-bottom: 0.5rem;
+
   overflow-x: auto;
 
   ::-webkit-scrollbar-track {
-    border-top: 0.5rem solid ${Color.support};
-
     border-radius: 0.8rem;
     background-color: rgba(0, 0, 0, 0.15);
   }
   ::-webkit-scrollbar {
-    height: 1rem;
+    height: 0.5rem;
   }
   ::-webkit-scrollbar-thumb {
-    border-top: 0.5rem solid ${Color.support};
-
     border-radius: 0.8rem;
     background-color: rgba(0, 0, 0, 0.2);
   }
