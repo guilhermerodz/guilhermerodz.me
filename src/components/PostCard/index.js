@@ -12,6 +12,7 @@ import {
   Thumbnail,
   ThumbnailOverlay,
   PlayIcon,
+  TagsWrapper,
   Tags,
   Tag,
 } from './styles';
@@ -55,17 +56,20 @@ export default function PostCard({
         </Thumbnail>
       )}
 
-      <Tags>
-        {tags.map(tag => (
-          <Tag key={tag}>{tag}</Tag>
-        ))}
-      </Tags>
+      <TagsWrapper>
+        <Tags>
+          {tags.map(tag => (
+            <Tag key={tag}>{tag}</Tag>
+          ))}
+        </Tags>
+      </TagsWrapper>
     </Container>
   );
 }
 
 PostCard.defaultProps = {
   readTime: undefined,
+  // tags: [],
 };
 
 PostCard.propTypes = {
@@ -77,4 +81,5 @@ PostCard.propTypes = {
     url: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
   }).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string),
 };

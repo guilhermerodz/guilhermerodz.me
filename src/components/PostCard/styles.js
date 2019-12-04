@@ -9,7 +9,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  background: #343746;
+  background: ${Color.support};
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.5rem;
 
@@ -102,22 +102,48 @@ export const PlayIcon = styled(PlayCircle)`
   color: #fff;
 `;
 
-export const Tags = styled.ul`
-  display: flex;
-  align-items: center;
-
-  padding: ${Sizes.sm} ${Sizes.md};
+export const TagsWrapper = styled.div`
+  padding: ${Sizes.sm} ${Sizes.md} ${Sizes.default};
 `;
 
-export const Tag = styled.li`
-  font-size: 1.8rem;
-  padding: 0.3rem 0.8rem;
+export const Tags = styled.div`
+  display: flex;
 
-  color: ${Color.pink};
+  overflow-x: auto;
+
+  ::-webkit-scrollbar-track {
+    border-top: 0.5rem solid ${Color.support};
+
+    border-radius: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  ::-webkit-scrollbar {
+    height: 1rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-top: 0.5rem solid ${Color.support};
+
+    border-radius: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+`;
+
+export const Tag = styled.span`
+  text-transform: lowercase;
+
+  font-family: 'Fira Code', sans-serif;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 0.5rem 0.8rem;
+
+  white-space: nowrap;
+
+  color: ${Color.purple};
   background: ${Color.background};
   border-radius: 0.7rem;
 
-  & + li {
+  & + span {
     margin-left: 1rem;
   }
 `;
