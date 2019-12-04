@@ -11,6 +11,7 @@ import {
   Description,
   Thumbnail,
   ThumbnailOverlay,
+  ThumbnailImage,
   PlayIcon,
   TagsWrapper,
   Tags,
@@ -18,15 +19,12 @@ import {
 } from './styles';
 
 export default function PostCard({
-  date = '21 Jun, 2001',
-  readTime = 16,
-  title = 'Autenticação com JWT e Bcrypt',
-  description = 'Inclui cadastro & login de usuário e middleware de autenticação.',
-  video = {
-    url: 'https://www.youtube.com/watch?v=3MATqg6y-WE',
-    thumbnail: 'https://img.youtube.com/vi/3MATqg6y-WE/0.jpg',
-  },
-  tags = ['authentication', 'json web token', 'express', 'node'],
+  date,
+  title,
+  description,
+  video,
+  tags,
+  readTime,
 }) {
   return (
     <Container>
@@ -52,7 +50,11 @@ export default function PostCard({
             <span>assistir</span>
           </ThumbnailOverlay>
 
-          <img alt={title} src={video.thumbnail} />
+          <ThumbnailImage
+            fluid={video.thumbnail}
+            alt={title}
+            aria-label={title}
+          />
         </Thumbnail>
       )}
 
@@ -69,7 +71,7 @@ export default function PostCard({
 
 PostCard.defaultProps = {
   readTime: undefined,
-  // tags: [],
+  tags: [],
 };
 
 PostCard.propTypes = {
@@ -79,7 +81,7 @@ PostCard.propTypes = {
   description: PropTypes.string.isRequired,
   video: PropTypes.shape({
     url: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
+    thumbnail: PropTypes.object.isRequired,
   }).isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
 };

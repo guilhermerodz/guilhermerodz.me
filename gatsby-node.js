@@ -26,3 +26,19 @@ exports.createPages = ({ _, actions }) => {
     });
   });
 };
+
+exports.onCreateNode = function onCreateNode({ actions, node }) {
+  if (node.internal.type === 'MarkdownRemark') {
+    const { createNodeField } = actions;
+
+    const { video } = node.frontmatter;
+
+    if (video) {
+      createNodeField({
+        name: 'videoURL',
+        value: `https://www.youtube.com/watch?v=${video}`,
+        node,
+      });
+    }
+  }
+};

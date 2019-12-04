@@ -11,7 +11,7 @@ export const Picture = styled(Image)`
   width: ${Sizes.lg};
 
   ${media.lessThan(`${Media.xs}px`)`
-  height: ${Sizes.md};
-  width: ${Sizes.md};
+    height: ${Sizes.md};
+    width: ${Sizes.md};
   `}
 `;

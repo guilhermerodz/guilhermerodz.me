@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Image from 'gatsby-image';
 import { Book } from 'styled-icons/boxicons-solid';
 import { PlayCircle } from 'styled-icons/boxicons-regular';
 
@@ -52,12 +53,6 @@ export const Thumbnail = styled.a.attrs(props => ({
   overflow: hidden;
 
   margin-top: ${Sizes.default};
-
-  > img {
-    margin-bottom: -9.5%;
-    margin-top: -9.8%;
-    width: 100%;
-  }
 `;
 
 export const ThumbnailOverlay = styled.div`
@@ -74,6 +69,8 @@ export const ThumbnailOverlay = styled.div`
 
   transition: 0.15s;
 
+  z-index: 1;
+
   > span {
     color: #fff;
   }
@@ -89,6 +86,10 @@ export const ThumbnailOverlay = styled.div`
       opacity: 1;
     }
   }
+`;
+
+export const ThumbnailImage = styled(Image)`
+  width: 100%;
 `;
 
 export const PlayIcon = styled(PlayCircle)`

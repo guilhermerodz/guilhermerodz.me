@@ -22,7 +22,7 @@ export const Container = styled.footer`
 
   display: flex;
   justify-content: center;
-  align-items: 'center';
+  align-items: center;
 
   background-color: #171921;
   border-top: 1px solid #343847;
