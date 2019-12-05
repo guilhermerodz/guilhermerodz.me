@@ -19,6 +19,7 @@ import {
 } from './styles';
 
 export default function PostCard({
+  slug,
   date,
   title,
   description,
@@ -27,7 +28,7 @@ export default function PostCard({
   readTime,
 }) {
   return (
-    <Container>
+    <Container to={`/${slug}`}>
       <Content>
         <Timing>
           {date}
@@ -44,7 +45,7 @@ export default function PostCard({
       </Content>
 
       {video && (
-        <Thumbnail url={video.url}>
+        <Thumbnail>
           <ThumbnailOverlay>
             <PlayIcon />
             <span>assistir</span>
@@ -75,6 +76,7 @@ PostCard.defaultProps = {
 };
 
 PostCard.propTypes = {
+  slug: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   readTime: PropTypes.number,
   title: PropTypes.string.isRequired,

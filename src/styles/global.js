@@ -51,5 +51,20 @@ const GlobalStyles = createGlobalStyle`
   ::selection {
     background: ${Color.highlight};
   }
+
+  ::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${Color.background};
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${Color.support};
+    border-radius: 1.5rem;
+
+  }
 `;
 export default GlobalStyles;

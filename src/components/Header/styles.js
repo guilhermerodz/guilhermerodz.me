@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import media from 'styled-media-query';
 
 import { StackOrder, Heights, Sizes, Color, Media } from '~/styles/constants';
@@ -11,11 +12,13 @@ export const Container = styled.div`
 
   width: 100%;
 
-  background-color: #171921;
+  background-color: ${Color.darker};
   border-bottom: 1px solid #343847;
 `;
 
-export const Content = styled.div`
+export const Content = styled(Link)`
+  text-decoration: none;
+
   display: flex;
   justify-content: space-between;
   align-items: center;

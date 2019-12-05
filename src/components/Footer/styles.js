@@ -24,7 +24,7 @@ export const Container = styled.footer`
   justify-content: center;
   align-items: center;
 
-  background-color: #171921;
+  background-color: ${Color.darker};
   border-top: 1px solid #343847;
 
   > div {

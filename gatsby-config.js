@@ -92,7 +92,7 @@ module.exports = {
         name: 'Guilherme Rodz',
         short_name: 'guilhermerodz.me',
         start_url: '/',
-        background_color: '#282A36',
+        background_color: '#282a36',
         theme_color: '#171921',
         display: 'minimal-ui',
         icon: 'src/assets/icon.png',

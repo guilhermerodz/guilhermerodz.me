@@ -1,21 +1,31 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 import { Book } from 'styled-icons/boxicons-solid';
-import { PlayCircle } from 'styled-icons/boxicons-regular';
+import { Youtube } from 'styled-icons/boxicons-logos';
 
-import { Sizes, Color } from '~/styles/constants';
+import { Sizes, Color, Animation } from '~/styles/constants';
 import { Heading, Subtitle } from '~/styles/typography';
 
-export const Container = styled.div`
+export const Container = styled(Link)`
+  text-decoration: none;
+
   display: flex;
   flex-direction: column;
 
   background: ${Color.support};
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.75);
 
-  & + div {
+  transition: ${Animation.delay};
+
+  & + a {
     margin-top: ${Sizes.default};
+  }
+
+  &:hover {
+    border: 1px solid ${Color.pink};
   }
 `;
 
@@ -37,16 +47,14 @@ export const Title = styled.h1`
 export const Description = styled.h2`
   ${Subtitle.secondary}
 
+  margin-top: 1.3rem;
+
   &:not(:last-child) {
     margin-bottom: ${Sizes.default};
   }
 `;
 
-export const Thumbnail = styled.a.attrs(props => ({
-  href: props.url,
-  target: '_blank',
-  rel: 'noopener noreferrer',
-}))`
+export const Thumbnail = styled.div`
   position: relative;
 
   display: flex;
@@ -92,7 +100,7 @@ export const ThumbnailImage = styled(Image)`
   width: 100%;
 `;
 
-export const PlayIcon = styled(PlayCircle)`
+export const PlayIcon = styled(Youtube)`
   height: 5rem;
   width: 5rem;
 
