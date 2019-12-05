@@ -104,5 +104,12 @@ module.exports = {
         '~': path.join(__dirname, 'src'),
       },
     },
+    'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-netlify-cache',
+      options: {
+        cachePublic: true,
+      },
+    },
   ],
 };
