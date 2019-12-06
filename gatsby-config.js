@@ -24,6 +24,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'uploads',
+        path: path.join(__dirname, 'static', 'uploads'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'assets',
         path: path.join(__dirname, 'src', 'assets'),
       },
@@ -63,14 +70,22 @@ module.exports = {
             options: {
               usePrefix: false,
               providers: {
-                include: ['YouTube', 'Twitter', 'CodePen'],
-                exclude: ['Flickr', 'Instagram', 'Reddit'],
-              },
-              settings: {
-                Twitter: { theme: 'dark' },
+                include: ['Twitter', 'Codepen'],
+                exclude: ['Flickr', 'Instagram', 'Reddit', 'YouTube'],
               },
             },
           },
+          {
+            resolve: 'gatsby-remark-embed-video',
+            options: {
+              width: 600,
+              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+              // height: 400, // Optional: Overrides optional.ratio
+              related: false, // Optional: Will remove related videos from the end of an embedded YouTube video.
+              noIframeBorder: true, // Optional: Disable insertion of <style> border: 0
+            },
+          },
+          'gatsby-remark-responsive-iframe',
           'gatsby-plugin-catch-links',
           'gatsby-remark-lazy-load',
           'gatsby-remark-prismjs',

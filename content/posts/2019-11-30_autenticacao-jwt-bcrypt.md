@@ -1,6 +1,6 @@
 ---
 title: 'Autenticação com JWT e Bcrypt'
-date: 2001-06-21 00:00:00
+date: 2019-11-30 22:00:00
 description: 'Inclui cadastro & login de usuário e middleware de autenticação.'
 tags: ['authentication', 'json web token', 'express', 'node']
 video: '3MATqg6y-WE'

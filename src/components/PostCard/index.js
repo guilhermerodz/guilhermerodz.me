@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Timing from '~/components/Timing';
+import Tags from '~/components/Tags';
 
 import {
   Container,
@@ -14,8 +15,6 @@ import {
   ThumbnailImage,
   PlayIcon,
   TagsWrapper,
-  Tags,
-  Tag,
 } from './styles';
 
 export default function PostCard({
@@ -28,7 +27,13 @@ export default function PostCard({
   readTime,
 }) {
   return (
-    <Container to={`/${slug}`}>
+    <Container
+      to={`/${slug}`}
+      state={{
+        previousPath:
+          typeof window !== 'undefined' ? window.location.href : undefined,
+      }}
+    >
       <Content>
         <Timing>
           {date}
@@ -60,11 +65,7 @@ export default function PostCard({
       )}
 
       <TagsWrapper>
-        <Tags>
-          {tags.map(tag => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
-        </Tags>
+        <Tags tags={tags} />
       </TagsWrapper>
     </Container>
   );

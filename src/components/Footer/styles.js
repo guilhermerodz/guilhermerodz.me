@@ -25,7 +25,7 @@ export const Container = styled.footer`
   align-items: center;
 
   background-color: ${Color.darker};
-  border-top: 1px solid #343847;
+  border-top: 1px solid ${Color.border};
 
   > div {
     display: flex;

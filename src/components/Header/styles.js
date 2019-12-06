@@ -13,7 +13,7 @@ export const Container = styled.div`
   width: 100%;
 
   background-color: ${Color.darker};
-  border-bottom: 1px solid #343847;
+  border-bottom: 1px solid ${Color.border};
 `;
 
 export const Content = styled(Link)`

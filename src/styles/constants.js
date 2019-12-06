@@ -38,6 +38,7 @@ export const Heights = {
 
 export const Color = {
   background: '#282A36',
+  border: '#343847',
   darker: '#171921',
   support: '#343746',
   purple: '#B991F6',

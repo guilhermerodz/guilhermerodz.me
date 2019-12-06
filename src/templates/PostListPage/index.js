@@ -42,7 +42,7 @@ export default function PostListPage({ data }) {
 
 PostListPage.propTypes = {
   // pageContext: PropTypes.object.isRequired,
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export const query = graphql`
@@ -54,6 +54,7 @@ export const query = graphql`
     ) {
       edges {
         node {
+          id
           fields {
             videoURL
             slug

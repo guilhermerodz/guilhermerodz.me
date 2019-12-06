@@ -20,7 +20,6 @@ export default function Footer() {
       site {
         siteMetadata {
           social {
-            twitterUsername
             twitterUrl
             githubUrl
             linkedinUrl

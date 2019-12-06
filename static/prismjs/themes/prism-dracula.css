@@ -35,7 +35,7 @@ pre::-webkit-scrollbar-thumb {
 code[class*='language-'],
 pre[class*='language-'] {
   color: #ccc;
-  background: rgb(40, 41, 54);
+  background: rgb(29, 30, 39);
   text-shadow: none;
   font-family: PT Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
     monospace;
@@ -81,7 +81,7 @@ code[class*='language-'] ::selection {
 
 /* Code blocks */
 pre[class*='language-'] {
-  background: rgba(40, 41, 54, 1) !important;
+  background: rgba(29, 30, 39, 1) !important;
   border-radius: 0.5em;
   padding: 1em;
   margin: 0.5em 0;
@@ -91,7 +91,7 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: rgba(40, 41, 54, 1);
+  background: rgba(29, 30, 39, 1);
 }
 
 /* Inline code */

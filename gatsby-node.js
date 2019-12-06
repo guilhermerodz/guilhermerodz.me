@@ -1,10 +1,11 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
+const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const postPage = path.resolve('./src/templates/PostPage.js');
-  const postListPage = path.resolve('./src/templates/PostListPage.js');
+  const postPage = path.resolve('./src/templates/PostPage/index.js');
+  const postListPage = path.resolve('./src/templates/PostListPage/index.js');
 
   const {
     data: {
@@ -83,6 +84,8 @@ exports.createPages = async ({ graphql, actions }) => {
 };
 
 exports.onCreateNode = function onCreateNode({ actions, node, getNode }) {
+  fmImagesToRelative(node);
+
   if (node.internal.type === 'MarkdownRemark') {
     const { createNodeField } = actions;
 
@@ -96,12 +99,18 @@ exports.onCreateNode = function onCreateNode({ actions, node, getNode }) {
       });
     }
 
-    const slug = createFilePath({ node, getNode, basePath: 'posts' });
+    let fileName = createFilePath({ node, getNode, basePath: 'posts' });
+    fileName = fileName.substring(1, fileName.length - 1);
 
     createNodeField({
       node,
+      name: 'fileName',
+      value: fileName,
+    });
+    createNodeField({
+      node,
       name: 'slug',
-      value: `posts/${slug.slice(12)}`,
+      value: `posts/${fileName.slice(11)}/`,
     });
   }
 };
