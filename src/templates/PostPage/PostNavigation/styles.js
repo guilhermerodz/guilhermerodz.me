@@ -31,12 +31,22 @@ export const Wrapper = styled.div`
       height: calc(100% - ${Sizes.default} - ${Sizes.sm});
     }
 
-    &:first-child > a {
-      border-top-right-radius: 5rem;
+    &:only-child {
+      margin: 0 auto;
+
+      h2 {
+        text-align: center;
+      }
     }
 
-    &:last-child > a {
-      border-top-left-radius: 5rem;
+    &:not(:only-child) {
+      &:first-child > a {
+        border-top-right-radius: 5rem;
+      }
+
+      &:last-child > a {
+        border-top-left-radius: 5rem;
+      }
     }
   `}
 `;
