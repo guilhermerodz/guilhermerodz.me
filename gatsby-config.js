@@ -110,7 +110,7 @@ module.exports = {
         twitterAccessTokenKey: process.env.TWITTER_ACCESS_TOKEN_KEY,
         twitterAccessTokenSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
         onlyProduction: true,
-        environment: process.env.NODE_ENVIRONMENT,
+        environment: process.env.NODE_ENV,
       },
     },
     {

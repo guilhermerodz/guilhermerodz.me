@@ -154,7 +154,7 @@ exports.createPages = async ({ reporter, graphql }, pluginOptions) => {
 
         data.tweets.push(tweetObject);
 
-        reporter.info(
+        console.log(
           `gatsby-plugin-twitter-post | Tweet created: ${tweetObject.expectedTweetURL}`
         );
 
