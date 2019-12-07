@@ -11,27 +11,22 @@ import {
 
 export const Container = styled.header``;
 
-export const GoBack = styled.button`
+export const GoBack = styled(Link)`
   ${LinkTypography.onlyUnderline(Color.pink)}
+  ${LinkTypography.onlyLink(Color.pink)}
 
-  max-width: min-content;
-  margin: ${Sizes.default} 0;
-
-  cursor: pointer;
-
-  border: 0;
-  background: 0;
-  outline: 0;
-`;
-
-export const GoBackWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
 
-export const GoBackSEO = styled(Link)`
-  ${LinkTypography.onlyLink(Color.pink)}
+  max-width: min-content;
+  margin-bottom: ${Sizes.default};
+
+  font-size: 13px;
+
+  &::after {
+    margin-top: 1.8rem;
+  }
 `;
 
 export const GoBackIcon = styled(ArrowBack)`

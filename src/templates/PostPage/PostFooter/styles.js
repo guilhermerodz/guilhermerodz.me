@@ -6,6 +6,8 @@ import { Text, Subtitle } from '~/styles/typography';
 
 export const Container = styled.div`
   ${Text.primary}
+
+  padding-top: ${Sizes.md};
   text-align: center;
 `;
 

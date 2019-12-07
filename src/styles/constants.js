@@ -29,7 +29,8 @@ export const Heights = {
   headerSm: Sizes.lg,
   headerLg: Sizes.xlg,
   footer: '4rem',
-  mainTop: Sizes.md,
+  topContentPadding: Sizes.md,
+  botContentPadding: Sizes.md,
 };
 
 // --------------------------------------------------

@@ -1,6 +1,13 @@
-import styled from 'styled-components';
+import React from 'react';
 
-export default styled.section`
-  margin: 0 auto;
-  max-width: 65rem;
-`;
+import { Container } from './styles';
+
+import Limiter from '~/components/Limiter';
+
+export default function Grid({ children, ...props }) {
+  return (
+    <Container {...props}>
+      <Limiter>{children}</Limiter>
+    </Container>
+  );
+}

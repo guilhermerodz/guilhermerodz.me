@@ -78,4 +78,5 @@ export default function PostFooter({ fileName, slug }) {
 
 PostFooter.propTypes = {
   slug: PropTypes.string.isRequired,
+  fileName: PropTypes.string.isRequired,
 };

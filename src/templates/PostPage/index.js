@@ -5,7 +5,6 @@ import { graphql } from 'gatsby';
 import Layout from '~/components/Layout';
 import SEO from '~/components/SEO';
 import Grid from '~/components/Grid';
-import Limiter from '~/components/Limiter';
 import Content from '~/components/Content';
 
 import PostHeader from './PostHeader';
@@ -27,30 +26,25 @@ export default function PostPage({ pageContext, data }) {
       />
 
       <Grid>
-        <Limiter>
-          <div itemScope itemType="http://schema.org/Article">
-            <PostHeader
-              date={post.frontmatter.date}
-              rawDate={post.frontmatter.rawDate}
-              readTime={post.timeToRead}
-              title={post.frontmatter.title}
-              description={post.frontmatter.description}
-              tags={post.frontmatter.tags}
-            />
+        <div itemScope itemType="http://schema.org/Article">
+          <PostHeader
+            date={post.frontmatter.date}
+            rawDate={post.frontmatter.rawDate}
+            readTime={post.timeToRead}
+            title={post.frontmatter.title}
+            description={post.frontmatter.description}
+            tags={post.frontmatter.tags}
+          />
 
-            <Content>
-              <div
-                itemProp="articleBody"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-              />
-            </Content>
-
-            <PostFooter
-              fileName={post.fields.fileName}
-              slug={post.fields.slug}
+          <Content>
+            <div
+              itemProp="articleBody"
+              dangerouslySetInnerHTML={{ __html: post.html }}
             />
-          </div>
-        </Limiter>
+          </Content>
+
+          <PostFooter fileName={post.fields.fileName} slug={post.fields.slug} />
+        </div>
       </Grid>
     </Layout>
   );

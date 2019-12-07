@@ -6,19 +6,20 @@ import Layout from '~/components/Layout';
 import SEO from '~/components/SEO';
 import Grid from '~/components/Grid';
 import PostList from '~/components/PostList';
+import Pagination from '~/components/Pagination';
 
-export default function PostListPage({ data }) {
+export default function PostListPage({ data, pageContext }) {
   const {
     allMarkdownRemark: { edges },
   } = data;
 
-  // const { currentPage, numPages } = pageContext;
+  const { currentPage, numPages } = pageContext;
 
-  // const isFirst = currentPage === 1;
-  // const isLast = currentPage === numPages;
-  // const previousPage =
-  //   currentPage <= 2 ? '/posts/' : `/posts/page/${currentPage - 1}`;
-  // const nextPage = `/posts/page/${currentPage + 1}`;
+  const isFirst = currentPage === 1;
+  const isLast = currentPage === numPages;
+  const previousPage =
+    currentPage <= 2 ? '/posts/' : `/posts/page/${currentPage - 1}`;
+  const nextPage = `/posts/page/${currentPage + 1}`;
 
   return (
     <Layout>
@@ -27,21 +28,21 @@ export default function PostListPage({ data }) {
       <Grid>
         <PostList edges={edges} />
 
-        {/* <Pagination
+        <Pagination
           currentPage={currentPage}
           numPages={numPages}
           isFirst={isFirst}
           isLast={isLast}
           previousPage={previousPage}
           nextPage={nextPage}
-        /> */}
+        />
       </Grid>
     </Layout>
   );
 }
 
 PostListPage.propTypes = {
-  // pageContext: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
 };
 

@@ -139,6 +139,20 @@ const LinkSnippets = {
       left: 0;
     }
   `,
+  onlyReverseUnderline: color => css`
+    ${LinkSnippets.onlyUnderline(color)}
+
+    &::after {
+      left: auto;
+
+      right: 0;
+    }
+
+    &:hover::after {
+      left: auto;
+      right: 0;
+    }
+  `,
 };
 
 export const Link = {

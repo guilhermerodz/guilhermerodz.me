@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { navigate } from '@reach/router';
@@ -9,8 +9,6 @@ import Tags from '~/components/Tags';
 import {
   Container,
   GoBack,
-  GoBackWrapper,
-  GoBackSEO,
   GoBackIcon,
   Title,
   Description,
@@ -25,30 +23,21 @@ export default function PostHeader({
   description,
   tags,
 }) {
-  function handleGoBack() {
-    if (window && window.history) {
-      if (window.history.state) {
-        const { previousPath } = window.history.state;
+  const goBackURL = useMemo(() => {
+    if (window && window.history && window.history.state) {
+      const { previousPath, elementId } = window.history.state;
 
-        if (previousPath) {
-          navigate(previousPath);
-          return;
-        }
-      }
-
-      navigate('/posts');
+      return `${previousPath}#${elementId}`;
     }
-  }
+
+    return '/posts/';
+  }, []);
 
   return (
     <Container>
-      <GoBack onClick={handleGoBack}>
-        <GoBackWrapper>
-          <GoBackIcon />
-          <GoBackSEO rel="prev" to="/posts/" onClick={e => e.preventDefault()}>
-            Voltar
-          </GoBackSEO>
-        </GoBackWrapper>
+      <GoBack rel="prev" to={goBackURL}>
+        <GoBackIcon />
+        Voltar
       </GoBack>
 
       <Timing>

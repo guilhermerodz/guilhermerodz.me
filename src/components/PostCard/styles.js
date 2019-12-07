@@ -29,6 +29,12 @@ export const Container = styled(Link)`
   }
 `;
 
+export const Anchor = styled.div`
+  margin-top: -6.8rem;
+
+  position: absolute;
+`;
+
 export const Content = styled.div`
   padding: ${Sizes.default} ${Sizes.md} 0 ${Sizes.md};
 `;

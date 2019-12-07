@@ -6,6 +6,7 @@ import Tags from '~/components/Tags';
 
 import {
   Container,
+  Anchor,
   Content,
   BookIcon,
   Title,
@@ -26,14 +27,22 @@ export default function PostCard({
   tags,
   readTime,
 }) {
+  const anchorId = slug.slice(6);
+
   return (
     <Container
       to={`/${slug}`}
-      state={{
-        previousPath:
-          typeof window !== 'undefined' ? window.location.href : undefined,
-      }}
+      state={
+        typeof window !== 'undefined'
+          ? {
+              previousPath: window.location.pathname,
+              elementId: anchorId,
+            }
+          : undefined
+      }
     >
+      <Anchor id={anchorId} />
+
       <Content>
         <Timing>
           {date}
