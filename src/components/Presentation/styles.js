@@ -18,7 +18,11 @@ export const Container = styled(Content)`
 export const ExternalLink = styled.a.attrs({
   target: '_blank',
   rel: 'noopener noreferrer',
-})``;
+})`
+  &::after {
+    margin-top: -0.2rem !important;
+  }
+`;
 
 export const Emoji = styled.span.attrs(props => ({
   className: 'small',

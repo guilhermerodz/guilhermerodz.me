@@ -1,0 +1,14 @@
+{
+  "name": "gatsby-plugin-twitter-post",
+  "version": "1.0.0",
+  "description": "Create one Tweet for each Post in my personal blog.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guilherme Rodz",
+  "license": "MIT",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  }
+}

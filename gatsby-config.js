@@ -1,3 +1,4 @@
+require('dotenv/config');
 const path = require('path');
 
 module.exports = {
@@ -93,6 +94,23 @@ module.exports = {
           'gatsby-remark-external-links',
           'gatsby-remark-smartypants',
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-twitter-post',
+      options: {
+        staticFolderPath: path.join(__dirname, 'static'),
+        sortFrontmatter: {
+          field: 'date',
+          order: 'DESC',
+        },
+        resolveURL: slug => `https://guilhermerodz.me/${slug}`,
+        twitterConsumerKey: process.env.TWITTER_CONSUMER_KEY,
+        twitterConsumerSecret: process.env.TWITTER_CONSUMER_SECRET,
+        twitterAccessTokenKey: process.env.TWITTER_ACCESS_TOKEN_KEY,
+        twitterAccessTokenSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+        onlyProduction: true,
+        environment: process.env.NODE_ENVIRONMENT,
       },
     },
     {

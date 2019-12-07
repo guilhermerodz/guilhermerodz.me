@@ -38,7 +38,7 @@ export default function Presentation({ full }) {
       <h1>Fala Dev! <HeaderEmoji label="Foguete">🚀</HeaderEmoji></h1>
 
       <p>Sou <ExternalLink href={social.twitterUrl} itemProp="name">Guilherme Rodz</ExternalLink>, 18, <i><span itemProp="jobTitle">Software Engineer</span></i>. Comecei a programar com 13 anos. Acredito que a tecnologia é poderosa o suficiente para mudar a vida de todos nós.</p>
-      <p>Sou criador de conteúdo. Trabalho na <a href="https://rocketseat.com.br" target="_blank" rel="noopener noreferrer" title="Ver" itemProp="affiliation">Rocketseat</a>. Fui mentor no Hackathon <i><span itemProp="organizer">RS/XP 2019</span></i>, com cerca de <b>mil desenvolvedores</b>
+      <p>Sou criador de conteúdo. Trabalho na <ExternalLink href="https://rocketseat.com.br" itemProp="affiliation">Rocketseat</ExternalLink>. Fui mentor no Hackathon <i><span itemProp="organizer">RS/XP 2019</span></i>, com cerca de <b>mil desenvolvedores</b>
         {full ? '.' : (
           <Dots to="/sobre-mim">...</Dots>
         )}
