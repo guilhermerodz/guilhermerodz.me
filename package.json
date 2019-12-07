@@ -67,7 +67,8 @@
     "react-responsive": "^8.0.1",
     "styled-components": "^4.4.0",
     "styled-icons": "^8.6.0",
-    "styled-media-query": "^2.1.2"
+    "styled-media-query": "^2.1.2",
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
     "eslint": "^6.5.1",
