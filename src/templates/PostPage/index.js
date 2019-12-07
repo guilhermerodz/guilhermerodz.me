@@ -20,7 +20,7 @@ export default function PostPage({ pageContext, data }) {
       <SEO
         title="Home"
         description={post.frontmatter.description}
-        image={
+        image_url={
           post.frontmatter.thumbnailURL ||
           'https://guilhermerodz.me/assets/open-graph-image.jpg'
         }
@@ -72,6 +72,7 @@ export const query = graphql`
         description
         title
         tags
+        thumbnailURL
       }
       timeToRead
     }
