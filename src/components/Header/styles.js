@@ -23,6 +23,7 @@ export const Content = styled(Link)`
   justify-content: space-between;
   align-items: center;
 
+  width: fit-content;
   height: ${Heights.headerLg};
 
   ${media.lessThan(`${Media.xs}px`)`
