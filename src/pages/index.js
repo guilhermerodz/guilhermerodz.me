@@ -4,12 +4,13 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Layout from '~/components/Layout';
 import SEO from '~/components/SEO';
 import Grid from '~/components/Grid';
+import Presentation from '~/components/Presentation';
 import PostList from '~/components/PostList';
 
 const query = graphql`
   {
     allMarkdownRemark(
-      limit: 5
+      limit: 2
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       edges {
@@ -51,7 +52,9 @@ export default function HomePage() {
       <SEO title="Home" />
 
       <Grid>
-        <PostList edges={edges} />
+        <Presentation />
+
+        <PostList isHome edges={edges} />
       </Grid>
     </Layout>
   );

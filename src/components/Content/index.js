@@ -1,13 +1,21 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
-import { Text, Heading, Subtitle, Link } from '~/styles/typography';
+import { Text, Heading, Link } from '~/styles/typography';
 import { Sizes, Color } from '~/styles/constants';
 
 export default styled.article`
   ${Text.primary}
 
   color: rgba(255, 255, 255, 0.9);
+
+  i {
+    font-style: italic;
+  }
+
+  b {
+    font-weight: bold;
+  }
 
   &:not(:first-child) {
     margin-top: ${Sizes.md};
@@ -52,7 +60,7 @@ export default styled.article`
     }
   }
 
-  a {
+  a:not(.reset__styles) {
     ${Link.primary}
   }
 
@@ -179,9 +187,5 @@ export default styled.article`
     &:hover {
       border: 1px solid ${Color.pink} !important;
     }
-  }
-
-  .support-title {
-    ${Subtitle.primary}
   }
 `;

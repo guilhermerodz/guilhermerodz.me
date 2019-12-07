@@ -11,8 +11,9 @@ module.exports = {
       twitterUrl: 'https://twitter.com/guilherme_rodz',
       githubUrl: 'https://github.com/guilhermerodz',
       linkedinUrl: 'https://www.linkedin.com/in/guilhermerodz/',
+      youtubeChannel: 'UCbJAKfdCHqjrM63VgTNGYOA',
+      youtubeUrl: 'https://www.youtube.com/channel/UCbJAKfdCHqjrM63VgTNGYOA',
       twitchUrl: 'https://www.twitch.tv/rod_oficial',
-      youtubeUrl: 'https://www.youtube.com/guilhermerodz',
     },
   },
   plugins: [

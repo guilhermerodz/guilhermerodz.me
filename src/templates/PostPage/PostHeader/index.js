@@ -1,19 +1,11 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { navigate } from '@reach/router';
 
+import GoBack from '~/components/GoBack';
 import Timing from '~/components/Timing';
 import Tags from '~/components/Tags';
 
-import {
-  Container,
-  GoBack,
-  GoBackIcon,
-  Title,
-  Description,
-  Author,
-} from './styles';
+import { Container, Title, Description, Author } from './styles';
 
 export default function PostHeader({
   date,
@@ -40,10 +32,7 @@ export default function PostHeader({
 
   return (
     <Container>
-      <GoBack rel="prev" to={goBackURL}>
-        <GoBackIcon />
-        Voltar
-      </GoBack>
+      <GoBack to={goBackURL} />
 
       <Timing>
         <span itemProp="datePublished" content={rawDate}>
