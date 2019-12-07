@@ -9,6 +9,7 @@ import Content from '~/components/Content';
 
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
+import PostNavigation from './PostNavigation';
 
 export default function PostPage({ pageContext, data }) {
   const { markdownRemark: post } = data;
@@ -44,6 +45,8 @@ export default function PostPage({ pageContext, data }) {
           </Content>
 
           <PostFooter fileName={post.fields.fileName} slug={post.fields.slug} />
+
+          <PostNavigation previous={previous} next={next} />
         </div>
       </Grid>
     </Layout>

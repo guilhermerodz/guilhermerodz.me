@@ -5,13 +5,13 @@ import PostCard from '~/components/PostCard';
 
 import { Container, Row, Left, Link } from './styles';
 
-export default function PostList({ edges, isHome }) {
+export default function PostList({ edges, total, isHome }) {
   return (
     <>
       {isHome && (
         <Row>
           <Left>Últimos posts</Left>
-          <Link to="/posts/">Ver todos os posts</Link>
+          <Link to="/posts/">Ver todos os posts {total && `(${total})`}</Link>
         </Row>
       )}
 
@@ -45,9 +45,11 @@ export default function PostList({ edges, isHome }) {
 
 PostList.defaultProps = {
   isHome: false,
+  total: undefined,
 };
 
 PostList.propTypes = {
   isHome: PropTypes.bool,
+  total: PropTypes.number,
   edges: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

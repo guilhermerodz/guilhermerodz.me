@@ -39,12 +39,22 @@ const query = graphql`
         }
       }
     }
+    totalMarkdownRemark: allMarkdownRemark {
+      edges {
+        node {
+          id
+        }
+      }
+    }
   }
 `;
 
 export default function HomePage() {
   const {
     allMarkdownRemark: { edges },
+    totalMarkdownRemark: {
+      edges: { length: total },
+    },
   } = useStaticQuery(query);
 
   return (
@@ -54,7 +64,7 @@ export default function HomePage() {
       <Grid>
         <Presentation />
 
-        <PostList isHome edges={edges} />
+        <PostList isHome total={total} edges={edges} />
       </Grid>
     </Layout>
   );

@@ -41,7 +41,13 @@ export const Container = styled.nav`
 `;
 
 const generateIcon = icon => styled(icon)`
-  margin-right: 0.4rem;
+  &:first-child {
+    margin-right: 0.4rem;
+  }
+
+  &:last-child {
+    margin-left: 0.4rem;
+  }
 
   height: 3rem;
   width: 3rem;
@@ -64,6 +70,14 @@ export const NavigateLink = styled(Link)`
       : LinkTypography.onlyUnderline(linkColor)}
 
   opacity: .8;
+
+  &:first-child {
+    text-align: left;
+  }
+
+  &:last-child {
+    text-align: right;
+  }
 
   &:hover {
     opacity: 1;
