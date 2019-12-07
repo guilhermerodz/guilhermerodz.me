@@ -33,7 +33,10 @@ export default function PostCard({
     <Container
       to={`/${slug}`}
       state={
-        typeof window !== 'undefined'
+        typeof window !== 'undefined' &&
+        window &&
+        window.location &&
+        window.location.pathname
           ? {
               previousPath: window.location.pathname,
               elementId: anchorId,

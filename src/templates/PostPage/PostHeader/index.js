@@ -24,10 +24,15 @@ export default function PostHeader({
   tags,
 }) {
   const goBackURL = useMemo(() => {
-    if (window && window.history && window.history.state) {
+    if (
+      typeof window !== 'undefined' &&
+      window &&
+      window.history &&
+      window.history.state
+    ) {
       const { previousPath, elementId } = window.history.state;
 
-      return `${previousPath}#${elementId}`;
+      if (elementId) return `${previousPath}#${elementId}`;
     }
 
     return '/posts/';
