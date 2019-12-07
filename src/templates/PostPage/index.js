@@ -18,7 +18,7 @@ export default function PostPage({ pageContext, data }) {
   return (
     <Layout>
       <SEO
-        title="Home"
+        title={post.frontmatter.title}
         description={post.frontmatter.description}
         image_url={
           post.frontmatter.thumbnailURL ||
