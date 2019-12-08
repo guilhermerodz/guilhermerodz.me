@@ -23,10 +23,17 @@ export default function PostList({ edges, total, isHome }) {
             date={node.frontmatter.date}
             title={node.frontmatter.title}
             description={node.frontmatter.description}
-            video={{
-              url: node.fields.videoURL,
-              thumbnail: node.thumbnailImage.childImageSharp.fluid,
-            }}
+            video={
+              node.fields.videoURL &&
+              node.thumbnailImage &&
+              node.thumbnailImage.childImageSharp &&
+              node.thumbnailImage.childImageSharp.fluid
+                ? {
+                    url: node.fields.videoURL,
+                    thumbnail: node.thumbnailImage.childImageSharp.fluid,
+                  }
+                : null
+            }
             tags={node.frontmatter.tags}
             readTime={node.timeToRead}
           />
@@ -36,7 +43,7 @@ export default function PostList({ edges, total, isHome }) {
       {isHome && (
         <Row>
           <div />
-          <Link to="/posts/">Ver todos os posts</Link>
+          <Link to="/posts/">Ver todos os posts {total && `(${total})`}</Link>
         </Row>
       )}
     </>

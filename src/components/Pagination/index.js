@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
-  Container,
+  TopContainer,
+  BottomContainer,
   ArrowBackIcon,
   ArrowForwardIcon,
   NavigateLink,
@@ -15,7 +17,11 @@ export default function Pagination({
   nextPage,
   currentPage,
   numPages,
+  // Style props,
+  top,
 }) {
+  const Container = top ? TopContainer : BottomContainer;
+
   return (
     <Container>
       {!isFirst ? (
@@ -48,3 +54,17 @@ export default function Pagination({
     </Container>
   );
 }
+
+Pagination.defaultProps = {
+  top: false,
+};
+
+Pagination.propTypes = {
+  isFirst: PropTypes.bool.isRequired,
+  isLast: PropTypes.bool.isRequired,
+  previousPage: PropTypes.number.isRequired,
+  nextPage: PropTypes.number.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  numPages: PropTypes.number.isRequired,
+  top: PropTypes.bool,
+};

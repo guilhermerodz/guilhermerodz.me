@@ -86,6 +86,7 @@ export default function PostCard({
 PostCard.defaultProps = {
   readTime: undefined,
   tags: [],
+  video: null,
 };
 
 PostCard.propTypes = {
@@ -97,6 +98,6 @@ PostCard.propTypes = {
   video: PropTypes.shape({
     url: PropTypes.string.isRequired,
     thumbnail: PropTypes.object.isRequired,
-  }).isRequired,
+  }),
   tags: PropTypes.arrayOf(PropTypes.string),
 };

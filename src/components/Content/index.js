@@ -62,6 +62,10 @@ export default styled.article`
 
   a:not(.reset__styles) {
     ${Link.primary}
+
+    &::after {
+      margin-top: -.2rem;
+    }
   }
 
   blockquote {

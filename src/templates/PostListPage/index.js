@@ -26,6 +26,16 @@ export default function PostListPage({ data, pageContext }) {
       <SEO title="Blog" />
 
       <Grid>
+        <Pagination
+          top
+          currentPage={currentPage}
+          numPages={numPages}
+          isFirst={isFirst}
+          isLast={isLast}
+          previousPage={previousPage}
+          nextPage={nextPage}
+        />
+
         <PostList edges={edges} />
 
         <Pagination

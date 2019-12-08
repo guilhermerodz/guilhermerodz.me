@@ -8,20 +8,17 @@ import { Link as LinkTypography } from '~/styles/typography';
 
 const linkColor = Color.pink;
 
-export const Container = styled.nav`
+const Container = styled.nav`
   &,
   a {
     color: ${linkColor};
     text-decoration: none;
   }
 
+  padding: ${Sizes.sm} 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  border-top: 1px solid ${Color.border};
-  margin-top: ${Sizes.lg};
-  padding: ${Sizes.sm} 0;
 
   > span {
     display: flex;
@@ -34,10 +31,20 @@ export const Container = styled.nav`
     }
   }
 
-  ${media.lessThan('500px')` {
+  ${media.lessThan('500px')`
     padding: ${Sizes.xs} 0;
     font-size: 1.5rem;
   `}
+`;
+
+export const TopContainer = styled(Container)`
+  border-bottom: 1px solid ${Color.border};
+  margin-bottom: ${Sizes.md};
+`;
+
+export const BottomContainer = styled(Container)`
+  border-top: 1px solid ${Color.border};
+  margin-top: ${Sizes.lg};
 `;
 
 const generateIcon = icon => styled(icon)`

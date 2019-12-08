@@ -44,7 +44,7 @@ export default function PostHeader({
       <Title>{title}</Title>
       <Description>{description}</Description>
       <Author>Guilherme Rodz</Author>
-      <Tags tags={tags} simple redirect />
+      <Tags tags={tags} simple />
     </Container>
   );
 }
