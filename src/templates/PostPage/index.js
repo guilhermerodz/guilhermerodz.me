@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
@@ -11,9 +12,18 @@ import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
 import PostNavigation from './PostNavigation';
 
+const getPageTrackClick = title => () =>
+  trackCustomEvent({
+    category: 'Post Click',
+    action: 'click',
+    label: `From another Post - ${title}`,
+  });
+
 export default function PostPage({ pageContext, data }) {
   const { markdownRemark: post } = data;
   const { next, previous } = pageContext;
+
+  const pageTrackClick = getPageTrackClick(post.frontmatter.title);
 
   return (
     <Layout>
@@ -46,7 +56,11 @@ export default function PostPage({ pageContext, data }) {
 
           <PostFooter fileName={post.fields.fileName} slug={post.fields.slug} />
 
-          <PostNavigation previous={previous} next={next} />
+          <PostNavigation
+            previous={previous}
+            next={next}
+            pageTrackClick={pageTrackClick}
+          />
         </div>
       </Grid>
     </Layout>

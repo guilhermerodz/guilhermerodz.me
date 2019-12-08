@@ -5,7 +5,13 @@ import PostCard from '~/components/PostCard';
 
 import { Container, Row, Left, Link } from './styles';
 
-export default function PostList({ edges, total, isHome }) {
+export default function PostList({
+  edges,
+  total,
+  isHome,
+  // Analytics
+  pageTrackClick,
+}) {
   return (
     <>
       {isHome && (
@@ -36,6 +42,7 @@ export default function PostList({ edges, total, isHome }) {
             }
             tags={node.frontmatter.tags}
             readTime={node.timeToRead}
+            pageTrackClick={pageTrackClick}
           />
         ))}
       </Container>
@@ -53,10 +60,12 @@ export default function PostList({ edges, total, isHome }) {
 PostList.defaultProps = {
   isHome: false,
   total: undefined,
+  pageTrackClick: () => {},
 };
 
 PostList.propTypes = {
   isHome: PropTypes.bool,
   total: PropTypes.number,
   edges: PropTypes.arrayOf(PropTypes.object).isRequired,
+  pageTrackClick: PropTypes.func,
 };

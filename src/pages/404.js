@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '~/components/Layout';
@@ -8,6 +9,20 @@ import Content from '~/components/Content';
 import Emoji from '~/components/Emoji';
 import PostList from '~/components/PostList';
 import GoBack from '~/components/GoBack';
+
+const trackGoHome = () =>
+  trackCustomEvent({
+    category: '404',
+    action: 'click',
+    label: `404 - Go back to Home`,
+  });
+
+const pageTrackClick = () =>
+  trackCustomEvent({
+    category: 'Post Click',
+    action: 'click',
+    label: `From 404`,
+  });
 
 const query = graphql`
   {
@@ -75,9 +90,14 @@ export default function HomePage() {
           </p>
         </Content>
 
-        <GoBack color="rgba(255, 255, 255, 0.7)" />
+        <GoBack color="rgba(255, 255, 255, 0.7)" onClick={trackGoHome} />
 
-        <PostList isHome total={total} edges={edges} />
+        <PostList
+          isHome
+          total={total}
+          edges={edges}
+          pageTrackClick={pageTrackClick}
+        />
       </Grid>
     </Layout>
   );

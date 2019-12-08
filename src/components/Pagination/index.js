@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import PropTypes from 'prop-types';
 
 import {
@@ -9,6 +10,13 @@ import {
   NavigateLink,
   DisabledLink,
 } from './styles';
+
+const trackClick = item =>
+  trackCustomEvent({
+    category: 'Pagination',
+    action: 'click',
+    label: `Pagination - Go to page ${item}`,
+  });
 
 export default function Pagination({
   isFirst,
@@ -25,7 +33,12 @@ export default function Pagination({
   return (
     <Container>
       {!isFirst ? (
-        <NavigateLink reverse rel="prev" to={previousPage}>
+        <NavigateLink
+          reverse
+          rel="prev"
+          to={previousPage}
+          onClick={() => trackClick(`previous page ${previousPage}`)}
+        >
           <ArrowBackIcon />
           Mais recentes
         </NavigateLink>
@@ -41,7 +54,11 @@ export default function Pagination({
       </span>
 
       {!isLast ? (
-        <NavigateLink rel="next" to={nextPage}>
+        <NavigateLink
+          rel="next"
+          to={nextPage}
+          onClick={() => trackClick(`next page ${nextPage}`)}
+        >
           Mais antigos
           <ArrowForwardIcon />
         </NavigateLink>

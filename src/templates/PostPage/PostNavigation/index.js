@@ -5,7 +5,7 @@ import PostMiniCard from '~/components/PostMiniCard';
 
 import { Container, Wrapper, Title } from './styles';
 
-export default function PostNavigation({ previous, next }) {
+export default function PostNavigation({ previous, next, pageTrackClick }) {
   return (
     <Container>
       {next && (
@@ -16,6 +16,7 @@ export default function PostNavigation({ previous, next }) {
             slug={next.fields.slug}
             date={next.frontmatter.date}
             title={next.frontmatter.title}
+            pageTrackClick={pageTrackClick}
           />
         </Wrapper>
       )}
@@ -27,6 +28,7 @@ export default function PostNavigation({ previous, next }) {
             slug={previous.fields.slug}
             date={previous.frontmatter.date}
             title={previous.frontmatter.title}
+            pageTrackClick={pageTrackClick}
           />
         </Wrapper>
       )}
@@ -37,9 +39,11 @@ export default function PostNavigation({ previous, next }) {
 PostNavigation.defaultProps = {
   previous: undefined,
   next: undefined,
+  pageTrackClick: () => {},
 };
 
 PostNavigation.propTypes = {
   previous: PropTypes.object,
   next: PropTypes.object,
+  pageTrackClick: PropTypes.func,
 };

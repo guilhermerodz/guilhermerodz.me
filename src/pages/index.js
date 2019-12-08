@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '~/components/Layout';
@@ -6,6 +7,13 @@ import SEO from '~/components/SEO';
 import Grid from '~/components/Grid';
 import Presentation from '~/components/Presentation';
 import PostList from '~/components/PostList';
+
+const pageTrackClick = () =>
+  trackCustomEvent({
+    category: 'Post Click',
+    action: 'click',
+    label: `From Home`,
+  });
 
 const query = graphql`
   {
@@ -64,7 +72,12 @@ export default function HomePage() {
       <Grid>
         <Presentation />
 
-        <PostList isHome total={total} edges={edges} />
+        <PostList
+          isHome
+          total={total}
+          edges={edges}
+          pageTrackClick={pageTrackClick}
+        />
       </Grid>
     </Layout>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import PropTypes from 'prop-types';
 
 import Timing from '~/components/Timing';
@@ -18,6 +19,13 @@ import {
   TagsWrapper,
 } from './styles';
 
+const trackClick = item =>
+  trackCustomEvent({
+    category: 'Post List',
+    action: 'click',
+    label: `Post List - Go to ${item}`,
+  });
+
 export default function PostCard({
   slug,
   date,
@@ -26,6 +34,8 @@ export default function PostCard({
   video,
   tags,
   readTime,
+  // Analytics
+  pageTrackClick,
 }) {
   const anchorId = slug.slice(6);
 
@@ -43,6 +53,10 @@ export default function PostCard({
             }
           : undefined
       }
+      onClick={() => {
+        pageTrackClick();
+        trackClick(title);
+      }}
     >
       <Anchor id={anchorId} />
 
@@ -101,4 +115,5 @@ PostCard.propTypes = {
     thumbnail: PropTypes.object.isRequired,
   }),
   tags: PropTypes.arrayOf(PropTypes.string),
+  pageTrackClick: PropTypes.func.isRequired,
 };

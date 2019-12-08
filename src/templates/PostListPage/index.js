@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
@@ -7,6 +8,13 @@ import SEO from '~/components/SEO';
 import Grid from '~/components/Grid';
 import PostList from '~/components/PostList';
 import Pagination from '~/components/Pagination';
+
+const getPageTrackClick = currentPage => () =>
+  trackCustomEvent({
+    category: 'Post Click',
+    action: 'click',
+    label: `From Post List - Page ${currentPage}`,
+  });
 
 export default function PostListPage({ data, pageContext }) {
   const {
@@ -20,6 +28,8 @@ export default function PostListPage({ data, pageContext }) {
   const previousPage =
     currentPage <= 2 ? '/posts/' : `/posts/page/${currentPage - 1}`;
   const nextPage = `/posts/page/${currentPage + 1}`;
+
+  const pageTrackClick = getPageTrackClick(currentPage);
 
   return (
     <Layout>
@@ -36,7 +46,7 @@ export default function PostListPage({ data, pageContext }) {
           nextPage={nextPage}
         />
 
-        <PostList edges={edges} />
+        <PostList edges={edges} pageTrackClick={pageTrackClick} />
 
         <Pagination
           currentPage={currentPage}
