@@ -22,6 +22,8 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-offline',
+    'gatsby-plugin-sitemap',
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -119,6 +121,63 @@ module.exports = {
       resolve: 'gatsby-plugin-root-import',
       options: {
         '~': path.join(__dirname, 'src'),
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(({ post }) => {
+                return {
+                  ...post.frontmatter,
+                  description: post.frontmatter.description,
+                  date: post.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + post.fields.slug,
+                  guid: site.siteMetadata.siteUrl + post.fields.slug,
+                  custom_elements: [{ 'content:encoded': post.html }],
+                };
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    post: node {
+                      html
+                      fields {
+                        slug
+                      }
+                      frontmatter {
+                        date
+                        title
+                        description
+                      }
+                      excerpt(truncate: true, pruneLength: 500, format: HTML)
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/feed.xml',
+            title: 'Guilherme Rodz - RSS Feed',
+          },
+        ],
       },
     },
     'gatsby-plugin-netlify',
