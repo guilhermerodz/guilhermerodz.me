@@ -3,8 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { Color } from './constants';
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Fira+Code:400&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Fira+Code');
 
   /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -36,7 +35,8 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   html {
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 10px;
   }
   body {
