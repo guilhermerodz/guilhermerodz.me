@@ -81,24 +81,28 @@ export const ThumbnailOverlay = styled.div`
 
   background: rgba(0, 0, 0, 0.8);
 
-  transition: 0.15s;
+  transition: 0.25s ease-in;
 
   z-index: 1;
 
-  > span {
-    color: #fff;
+  > div {
+    &::after {
+      position: relative;
+      content: 'assistir';
+
+      color: #fff;
+      top: 0.05rem;
+
+      z-index: 2;
+    }
   }
 
-  &,
-  > * {
+  & {
     opacity: 0;
   }
 
   &:hover {
-    &,
-    > * {
-      opacity: 1;
-    }
+    opacity: 1;
   }
 `;
 

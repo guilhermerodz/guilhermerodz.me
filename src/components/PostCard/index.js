@@ -64,8 +64,9 @@ export default function PostCard({
       {video && (
         <Thumbnail>
           <ThumbnailOverlay>
-            <PlayIcon />
-            <span>assistir</span>
+            <div>
+              <PlayIcon />
+            </div>
           </ThumbnailOverlay>
 
           <ThumbnailImage
