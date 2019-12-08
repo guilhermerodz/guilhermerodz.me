@@ -146,8 +146,8 @@ module.exports = {
                   ...post.frontmatter,
                   description: post.frontmatter.description,
                   date: post.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + post.fields.slug,
-                  guid: site.siteMetadata.siteUrl + post.fields.slug,
+                  url: `${site.siteMetadata.siteUrl}/${post.fields.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/${post.fields.slug}`,
                   custom_elements: [{ 'content:encoded': post.html }],
                 };
               });
