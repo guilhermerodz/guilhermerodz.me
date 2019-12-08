@@ -4,7 +4,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { Container, ExternalLink, HeaderEmoji, Emoji, Dots, Picture, Merchan, YoutubeIcon } from './styles';
+import Emoji from '~/components/Emoji';
+
+import { Container, ExternalLink, HeaderEmoji, Dots, Picture, Merchan, YoutubeIcon } from './styles';
 
 export default function Presentation({ full }) {
   const { site: { siteMetadata: { social }}, teamImage } = useStaticQuery(
