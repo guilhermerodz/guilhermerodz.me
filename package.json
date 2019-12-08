@@ -32,7 +32,6 @@
   "dependencies": {
     "@raae/gatsby-remark-oembed": "^0.1.1",
     "babel-plugin-root-import": "^6.4.1",
-    "dotenv": "^8.2.0",
     "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
     "gatsby": "2.17.17",
     "gatsby-image": "^2.2.30",
@@ -67,8 +66,7 @@
     "react-responsive": "^8.0.1",
     "styled-components": "^4.4.0",
     "styled-icons": "^8.6.0",
-    "styled-media-query": "^2.1.2",
-    "twitter": "^1.7.1"
+    "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
     "eslint": "^6.5.1",
