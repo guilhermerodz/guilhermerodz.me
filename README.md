@@ -25,10 +25,12 @@ My personal blog and website developed with [Gatsby](https://www.gatsbyjs.org/),
 
 This app features all the latest tools and practices in web development!
 
-- ⚡ **Gatsby** — A static site generator
+- ⚡ **Gatsby** — A _blazing fast_ static site generator
 - ⚛ **React** — A library to build user interfaces
 - 💅 **CSS** — styled-components
 - 💖 **Lint** — ESlint/Prettier/Editor Config
+- 🧐 **Algolia** — Fast Instant Search
+- 📝 **Netlify CMS** — Simple CMS for posts
 
 ## Getting started
 
@@ -38,5 +40,7 @@ First you need to have `node` or `yarn` installed on your machine. Then, you can
 2. `yarn start`;
 
 To view the project you can open [localhost:8000](http://localhost:8000).
+To play with GraphQL queries you can open [localhost:8000/___graphql](http://localhost:8000/___graphql).
+To edit at Netlify CMS you can open [localhost:8000/admin](http://localhost:8000/admin).
 
-_Obs: don't forget to rename the `.env.example` file to `.env.development` and `.env.production` if you will test on build._
+_Obs: don't forget to create the `.env` (please duplicate `.env.example`).
