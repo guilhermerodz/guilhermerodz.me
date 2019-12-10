@@ -12,6 +12,7 @@ export default function Hit({ hit }) {
       description={hit.frontmatter.description}
       tags={hit.frontmatter.tags}
       readTime={hit.timeToRead}
+      searchHit={hit}
     />
   );
 }

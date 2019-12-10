@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 import { Book } from 'styled-icons/boxicons-solid';
@@ -44,14 +44,24 @@ export const BookIcon = styled(Book)`
   width: 2rem;
 `;
 
+const searchHighlight = css`
+  > span {
+    background-color: ${Color.darker};
+    padding: 0 0.4rem;
+    border-radius: 0.8rem;
+  }
+`;
+
 export const Title = styled.h1`
   ${Heading.primary}
+  ${searchHighlight}
 
   margin-top: 1rem;
 `;
 
 export const Description = styled.h2`
   ${Subtitle.secondary}
+  ${searchHighlight}
 
   margin-top: 1.3rem;
 

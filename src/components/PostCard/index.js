@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import Timing from '~/components/Timing';
 import Tags from '~/components/Tags';
 
+import Highlight from './Highlight';
+
 import {
   Container,
   Anchor,
@@ -34,6 +36,8 @@ export default function PostCard({
   thumbnail,
   tags,
   readTime,
+  // Algolia Search
+  searchHit,
   // Analytics
   pageTrackClick,
 }) {
@@ -71,8 +75,21 @@ export default function PostCard({
           )}
         </Timing>
 
-        <Title>{title}</Title>
-        {description && <Description>{description}</Description>}
+        {!searchHit ? (
+          <>
+            <Title>{title}</Title>
+            <Description>{description}</Description>
+          </>
+        ) : (
+          <>
+            <Title>
+              <Highlight attribute="frontmatter.title" hit={searchHit} />
+            </Title>
+            <Description>
+              <Highlight attribute="frontmatter.description" hit={searchHit} />
+            </Description>
+          </>
+        )}
       </Content>
 
       {thumbnail && (
