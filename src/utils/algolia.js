@@ -27,7 +27,7 @@ const queries = [
   {
     query: postQuery,
     transformer: ({ data }) => data.posts.edges.map(edge => edge.node),
-    indexName: process.env.ALGOLIA_INDEX_NAME,
+    indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
     settings,
   },
 ];
