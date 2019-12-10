@@ -25,6 +25,13 @@ export default function PostPage({ pageContext, data }) {
 
   const pageTrackClick = getPageTrackClick(post.frontmatter.title);
 
+  const newHTML = post.html
+    .replace(new RegExp('<strong>', 'g'), '<b>')
+    .replace(new RegExp('</strong>', 'g'), '</b>')
+    .replace(new RegExp('<em>', 'g'), '<i>')
+    .replace(new RegExp('</em>', 'g'), '</i>')
+    .replace(new RegExp('rel="nofollow ', 'g'), 'rel="');
+
   return (
     <Layout>
       <SEO
@@ -50,7 +57,7 @@ export default function PostPage({ pageContext, data }) {
           <Content>
             <div
               itemProp="articleBody"
-              dangerouslySetInnerHTML={{ __html: post.html }}
+              dangerouslySetInnerHTML={{ __html: newHTML }}
             />
           </Content>
 

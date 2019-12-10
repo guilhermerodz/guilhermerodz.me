@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
-import { Color, Heights, Sizes, Media, Widths } from '~/styles/constants';
+import { Color, Heights, Media, Widths } from '~/styles/constants';
 
 export const Page = styled.section`
   display: block;

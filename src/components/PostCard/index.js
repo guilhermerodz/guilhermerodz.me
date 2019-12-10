@@ -31,7 +31,7 @@ export default function PostCard({
   date,
   title,
   description,
-  video,
+  thumbnail,
   tags,
   readTime,
   // Analytics
@@ -75,7 +75,7 @@ export default function PostCard({
         {description && <Description>{description}</Description>}
       </Content>
 
-      {video && (
+      {thumbnail && (
         <Thumbnail>
           <ThumbnailOverlay>
             <div>
@@ -83,11 +83,7 @@ export default function PostCard({
             </div>
           </ThumbnailOverlay>
 
-          <ThumbnailImage
-            fluid={video.thumbnail}
-            alt={title}
-            aria-label={title}
-          />
+          <ThumbnailImage fluid={thumbnail} alt={title} aria-label={title} />
         </Thumbnail>
       )}
 
@@ -100,8 +96,9 @@ export default function PostCard({
 
 PostCard.defaultProps = {
   readTime: undefined,
+  thumbnail: undefined,
   tags: [],
-  video: null,
+  pageTrackClick: () => {},
 };
 
 PostCard.propTypes = {
@@ -110,10 +107,7 @@ PostCard.propTypes = {
   readTime: PropTypes.number,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  video: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    thumbnail: PropTypes.object.isRequired,
-  }),
+  thumbnail: PropTypes.object,
   tags: PropTypes.arrayOf(PropTypes.string),
-  pageTrackClick: PropTypes.func.isRequired,
+  pageTrackClick: PropTypes.func,
 };

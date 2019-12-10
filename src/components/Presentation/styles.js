@@ -7,7 +7,6 @@ import { Color, Sizes } from '~/styles/constants';
 import { Link as LinkTypography } from '~/styles/typography';
 
 import Content from '~/components/Content';
-import Emoji from '~/components/Emoji';
 
 export const Container = styled(Content)`
   a::after {
@@ -23,10 +22,6 @@ export const ExternalLink = styled.a.attrs({
   &::after {
     margin-top: -0.2rem !important;
   }
-`;
-
-export const HeaderEmoji = styled(Emoji)`
-  margin-left: 0.5rem;
 `;
 
 export const Dots = styled(Link)`

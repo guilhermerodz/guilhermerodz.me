@@ -3,8 +3,7 @@ import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import PropTypes from 'prop-types';
 
 import {
-  TopContainer,
-  BottomContainer,
+  Container,
   ArrowBackIcon,
   ArrowForwardIcon,
   NavigateLink,
@@ -25,11 +24,7 @@ export default function Pagination({
   nextPage,
   currentPage,
   numPages,
-  // Style props,
-  top,
 }) {
-  const Container = top ? TopContainer : BottomContainer;
-
   return (
     <Container>
       {!isFirst ? (
@@ -72,16 +67,11 @@ export default function Pagination({
   );
 }
 
-Pagination.defaultProps = {
-  top: false,
-};
-
 Pagination.propTypes = {
   isFirst: PropTypes.bool.isRequired,
   isLast: PropTypes.bool.isRequired,
-  previousPage: PropTypes.number.isRequired,
-  nextPage: PropTypes.number.isRequired,
+  previousPage: PropTypes.string.isRequired,
+  nextPage: PropTypes.string.isRequired,
   currentPage: PropTypes.number.isRequired,
   numPages: PropTypes.number.isRequired,
-  top: PropTypes.bool,
 };

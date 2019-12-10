@@ -35,7 +35,6 @@ const query = graphql`
           id
           fields {
             slug
-            videoURL
           }
           thumbnailImage {
             childImageSharp {
@@ -49,7 +48,6 @@ const query = graphql`
             date(locale: "pt-br", formatString: "DD MMM[,] YYYY")
             description
             tags
-            video
             thumbnailURL
           }
           timeToRead
@@ -83,10 +81,7 @@ export default function HomePage() {
           <h1>Talvez eu tenha deletado esse post...</h1>
 
           <p>
-            Descanse em paz.{' '}
-            <Emoji className="small" role="img" aria-label="Emoji feliz">
-              ⚰️
-            </Emoji>
+            Descanse em paz. <Emoji label="Emoji feliz">⚰️</Emoji>
           </p>
         </Content>
 

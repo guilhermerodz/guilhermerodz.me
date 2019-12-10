@@ -18,14 +18,12 @@ exports.createPages = async ({ graphql, actions }) => {
           post: node {
             fields {
               slug
-              videoURL
             }
             frontmatter {
               title
               date(locale: "pt-br", formatString: "DD [de] MMM [de] YYYY")
               description
               tags
-              video
               thumbnailURL
             }
             timeToRead
@@ -88,16 +86,6 @@ exports.onCreateNode = function onCreateNode({ actions, node, getNode }) {
 
   if (node.internal.type === 'MarkdownRemark') {
     const { createNodeField } = actions;
-
-    const { video } = node.frontmatter;
-
-    if (video) {
-      createNodeField({
-        name: 'videoURL',
-        value: `https://www.youtube.com/watch?v=${video}`,
-        node,
-      });
-    }
 
     let fileName = createFilePath({ node, getNode, basePath: 'posts' });
     fileName = fileName.substring(1, fileName.length - 1);

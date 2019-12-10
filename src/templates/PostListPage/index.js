@@ -8,6 +8,7 @@ import SEO from '~/components/SEO';
 import Grid from '~/components/Grid';
 import PostList from '~/components/PostList';
 import Pagination from '~/components/Pagination';
+import Search from '~/components/Search';
 
 const getPageTrackClick = currentPage => () =>
   trackCustomEvent({
@@ -16,7 +17,7 @@ const getPageTrackClick = currentPage => () =>
     label: `From Post List - Page ${currentPage}`,
   });
 
-export default function PostListPage({ data, pageContext }) {
+export default function PostListPage({ data, pageContext, location }) {
   const {
     allMarkdownRemark: { edges },
   } = data;
@@ -31,31 +32,27 @@ export default function PostListPage({ data, pageContext }) {
 
   const pageTrackClick = getPageTrackClick(currentPage);
 
+  const List = () => (
+    <>
+      <PostList edges={edges} pageTrackClick={pageTrackClick} />
+
+      <Pagination
+        currentPage={currentPage}
+        numPages={numPages}
+        isFirst={isFirst}
+        isLast={isLast}
+        previousPage={previousPage}
+        nextPage={nextPage}
+      />
+    </>
+  );
+
   return (
     <Layout>
       <SEO title="Blog" />
 
       <Grid>
-        <Pagination
-          top
-          currentPage={currentPage}
-          numPages={numPages}
-          isFirst={isFirst}
-          isLast={isLast}
-          previousPage={previousPage}
-          nextPage={nextPage}
-        />
-
-        <PostList edges={edges} pageTrackClick={pageTrackClick} />
-
-        <Pagination
-          currentPage={currentPage}
-          numPages={numPages}
-          isFirst={isFirst}
-          isLast={isLast}
-          previousPage={previousPage}
-          nextPage={nextPage}
-        />
+        <Search fallbackComponent={List} location={location} />
       </Grid>
     </Layout>
   );
@@ -64,6 +61,7 @@ export default function PostListPage({ data, pageContext }) {
 PostListPage.propTypes = {
   pageContext: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export const query = graphql`
@@ -77,7 +75,6 @@ export const query = graphql`
         node {
           id
           fields {
-            videoURL
             slug
           }
           thumbnailImage {
@@ -92,7 +89,6 @@ export const query = graphql`
             date(locale: "pt-br", formatString: "DD MMM[,] YYYY")
             description
             tags
-            video
             thumbnailURL
           }
           timeToRead

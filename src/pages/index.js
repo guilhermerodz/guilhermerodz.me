@@ -26,7 +26,6 @@ const query = graphql`
           id
           fields {
             slug
-            videoURL
           }
           thumbnailImage {
             childImageSharp {
@@ -40,7 +39,6 @@ const query = graphql`
             date(locale: "pt-br", formatString: "DD MMM[,] YYYY")
             description
             tags
-            video
             thumbnailURL
           }
           timeToRead

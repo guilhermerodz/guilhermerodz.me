@@ -1,6 +1,7 @@
 require('dotenv/config');
-
 const path = require('path');
+
+const queries = require('./src/utils/algolia');
 
 const plugins = [
   'gatsby-plugin-react-helmet',
@@ -172,6 +173,7 @@ const plugins = [
       cachePublic: true,
     },
   },
+  'gatsby-plugin-netlify-cms',
 ];
 
 if (process.env.CONTEXT === 'production') {
@@ -182,6 +184,16 @@ if (process.env.CONTEXT === 'production') {
         options: {
           trackingId: process.env.GOOGLE_ANALYTICS_ID,
           head: false,
+        },
+      },
+      {
+        resolve: 'gatsby-plugin-algolia',
+        options: {
+          appId: process.env.GATSBY_ALGOLIA_APP_ID,
+          apiKey: process.env.ALGOLIA_ADMIN_API_KEY,
+          queries,
+          chunkSize: 10000, // default: 1000
+          enablePartialUpdates: true,
         },
       },
     ]

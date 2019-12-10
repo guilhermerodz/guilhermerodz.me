@@ -3,7 +3,6 @@ title: 'Permissões JWT'
 date: 2019-11-30 23:00:00
 description: 'Inclui grupos de funções (administrador, moderador, ajudante, etc).'
 tags: ['authentication', 'json web token', 'roles', 'express', 'node']
-video: '0XBSGmqP2Yw'
 thumbnailURL: 'https://img.youtube.com/vi/0XBSGmqP2Yw/maxresdefault.jpg'
 ---
 

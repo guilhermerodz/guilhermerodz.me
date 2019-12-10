@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Emoji from '~/components/Emoji';
 
-import { Container, ExternalLink, HeaderEmoji, Dots, Picture, Merchan, YoutubeIcon } from './styles';
+import { Container, ExternalLink, Dots, Picture, Merchan, YoutubeIcon } from './styles';
 
 export default function Presentation({ full }) {
   const { site: { siteMetadata: { social }}, teamImage } = useStaticQuery(
@@ -37,7 +37,7 @@ export default function Presentation({ full }) {
     <Container>
       <div itemScope itemType="http://schema.org/Person">
 
-      <h1>Fala Dev! <HeaderEmoji label="Foguete">🚀</HeaderEmoji></h1>
+      <h1>Fala Dev! <Emoji heading label="Foguete">🚀</Emoji></h1>
 
       <p>Sou <ExternalLink href={social.twitterUrl} itemProp="name">Guilherme Rodz</ExternalLink>, 18, <i><span itemProp="jobTitle">Software Engineer</span></i>. Comecei a programar com 13 anos. Acredito que a tecnologia é poderosa o suficiente para mudar a vida de todos nós.</p>
       <p>Sou criador de conteúdo. Trabalho na <ExternalLink href="https://rocketseat.com.br" itemProp="affiliation">Rocketseat</ExternalLink>. Fui mentor no Hackathon <i><span itemProp="organizer">RS/XP 2019</span></i>, com cerca de <b>mil desenvolvedores</b>
@@ -66,7 +66,7 @@ export default function Presentation({ full }) {
 
       <Merchan itemProp="owner" href={social.youtubeUrl}>
         <YoutubeIcon />
-        <span>acessar conteúdo <HeaderEmoji label="Foguete">🚀</HeaderEmoji></span>
+        <span>acessar conteúdo <Emoji heading label="Foguete">🚀</Emoji></span>
       </Merchan>
     </Container>
   )

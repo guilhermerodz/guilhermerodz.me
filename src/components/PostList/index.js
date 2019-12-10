@@ -29,16 +29,11 @@ export default function PostList({
             date={node.frontmatter.date}
             title={node.frontmatter.title}
             description={node.frontmatter.description}
-            video={
-              node.fields.videoURL &&
-              node.thumbnailImage &&
-              node.thumbnailImage.childImageSharp &&
-              node.thumbnailImage.childImageSharp.fluid
-                ? {
-                    url: node.fields.videoURL,
-                    thumbnail: node.thumbnailImage.childImageSharp.fluid,
-                  }
-                : null
+            thumbnail={
+              (node.thumbnailImage &&
+                node.thumbnailImage.childImageSharp &&
+                node.thumbnailImage.childImageSharp.fluid) ||
+              null
             }
             tags={node.frontmatter.tags}
             readTime={node.timeToRead}

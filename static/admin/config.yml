@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: guilhermerodz/guilhermerodz.me
+  branch: master
+  # site_domain: guilhermerodz.me
+
+media_folder: static/uploads
+public_folder: uploads
+media_folder_relative: true
+# publish_mode: editorial_workflow
+
+collections:
+  - name: post # Used in routes, e.g. /admin/collections/blog
+    label: Post # Used in the UI
+    folder: content/posts # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{year}}-{{month}}-{{day}}_{{slug}}' # Filename template, e.g. YYYY-MM-DD_title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: Date, name: date, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string }
+      - { label: Tags, name: tags, widget: list, default: [],  }
+      - { label: Body, name: body, widget: markdown }
+      - { label: Thumbnail URL, name: thumbnailURL, widget: string }
