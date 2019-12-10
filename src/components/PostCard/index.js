@@ -114,6 +114,7 @@ export default function PostCard({
 PostCard.defaultProps = {
   readTime: undefined,
   thumbnail: undefined,
+  searchHit: undefined,
   tags: [],
   pageTrackClick: () => {},
 };
@@ -127,4 +128,5 @@ PostCard.propTypes = {
   thumbnail: PropTypes.object,
   tags: PropTypes.arrayOf(PropTypes.string),
   pageTrackClick: PropTypes.func,
+  searchHit: PropTypes.object,
 };
