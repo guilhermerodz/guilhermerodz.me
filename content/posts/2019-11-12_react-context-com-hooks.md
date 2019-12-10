@@ -14,10 +14,6 @@ Se você curte `react` e já desenvolve com o _Framework_ há algum tempo, já d
 
 No vídeo acima, eu vou te ensinar a utilizar a tão famosa `API` que está por trás do `Redux`. Vale a pena codar comigo e entender o real motivo pelo qual **muitos desenvolvedores preferem usar** a _Context_ no lugar do _Redux_.
 
-```html
-<a href="www.google.com" target="_blank" rel="nofollow noopener noreferrer">This link</a>
-```
-
 ## Conclusão
 
 Simples, eficaz e poderosa é a Context API do React; por sua vez, os `React Hooks` vieram com tudo para quebrar nossas dificuldades como _Front-end Developers_ e trazer uma vida **colorida** (<s>adeus</s> _Class Components_).
