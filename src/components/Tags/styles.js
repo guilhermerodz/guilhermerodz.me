@@ -9,6 +9,10 @@ export const Container = styled.div`
   padding-bottom: 0.5rem;
 
   overflow-x: auto;
+  @supports (-moz-appearance: none) {
+    scrollbar-width: none;
+    /* overflow: hidden; */
+  }
 
   ::-webkit-scrollbar-track {
     border-radius: 0.8rem;
