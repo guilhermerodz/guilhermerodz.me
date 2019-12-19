@@ -13,7 +13,7 @@ export const Title = styled.h1.attrs({
   margin: ${Sizes.sm} 0 ${Sizes.xs};
 `;
 
-export const Description = styled.div.attrs({
+export const Description = styled.h2.attrs({
   itemProp: 'description',
 })`
   ${Subtitle.primary}
