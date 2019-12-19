@@ -10,7 +10,7 @@ thumbnailURL: 'https://img.youtube.com/vi/0XBSGmqP2Yw/maxresdefault.jpg'
 
 Faaala Dev!
 
-Este é um conteúdo extra do meu post de <a href="http://guilhermerodz.me/posts/autenticacao-jwt-bcrypt/">autenticação JWT</a> com Node.js, Express e Bcrypt.
+Este é um conteúdo extra do meu post de [autenticação JWT](http://guilhermerodz.me/posts/autenticacao-jwt-bcrypt/) com Node.js, Express e Bcrypt.
 
 ## O problema
 
