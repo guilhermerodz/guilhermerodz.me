@@ -43,4 +43,4 @@ To view the project you can open [localhost:8000](http://localhost:8000).
 To play with GraphQL queries you can open [localhost:8000/___graphql](http://localhost:8000/___graphql).
 To edit at Netlify CMS you can open [localhost:8000/admin](http://localhost:8000/admin).
 
-_Obs: don't forget to create the `.env` (please duplicate `.env.example`).
+_Obs: don't forget to create the `.env` (please duplicate `.env.example`)._
